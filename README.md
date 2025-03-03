@@ -1,182 +1,75 @@
-<h1 align="center">
-  <br>
-  <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://f.hubspotusercontent20.net/hubfs/2829524/Copia%20de%20LOGOTIPO_original-2.png"></a>
-  <br>
-  Nombre del Proyecto
-  <br>
-</h1>
+# Arquetipo Python GUI graficador de propuestas para Pruebas de Performance
 
-<h4 align="center">Proyecto base de <a href="https://github.com/karatelabs/karate" target="_blank">Pragma</a>.</h4>
+![Python](https://img.shields.io/badge/python-3.12.5-blue)
+![Tkinter](https://img.shields.io/badge/Tkinter-GUI-blue?logo=python&logoColor=white)
 
-De aca en adelante encontraras las partes del readme con un pequeño ejemplo dentro de cada una de ellas, actualiza su contenido (no olvides borrar esta línea)
+## Features
 
-<p align="center">
-  <a href="https://www.oracle.com/java/technologies/javase-jdk11-downloads.html">
-    <img src="https://img.shields.io/badge/Java-11+-orange.svg" alt="Java">
-  </a>
-  <a href="https://www.mysql.com/">
-    <img src="https://img.shields.io/badge/Database-MySQL-blue.svg" alt="MySQL">
-  </a>
-  <a href="https://www.postgresql.org/">
-    <img src="https://img.shields.io/badge/Database-PostgreSQL-blue.svg" alt="PostgreSQL">
-  </a>
-  <a href="https://www.w3schools.com/sql/">
-    <img src="https://img.shields.io/badge/SQL-Fundamentals-lightgrey.svg" alt="SQL">
-  </a>
-  <a href="https://cucumber.io/">
-    <img src="https://img.shields.io/badge/Cucumber-BDD-green.svg" alt="Cucumber">
-  </a>
-  <a href="https://serenity-bdd.info/">
-    <img src="https://img.shields.io/badge/Serenity-Reporting-blueviolet.svg" alt="Serenity">
-  </a>
-  <a href="https://www.selenium.dev/">
-    <img src="https://img.shields.io/badge/Selenium-Web_Testing-brightgreen.svg" alt="Selenium">
-  </a>
-</p>
+- GUI Graficador de stages propuestos
+  - Pruebas pico + Generación stage para k6
+  - Pruebas de carga + Generación stage para k6
 
-Redacta aca una breve descripcion del proyecto...
+## Estructura de proyecto
+````
+qa-performance-k6-design-gui
+ ┣ README.md
+ ┣ requirements.txt (Script para pruebas de escenario POST)
+ ┗ graficador.py (Contiene los stages que son llamados desde los script de pruebas)
+````
 
-<p align="center">
-  <a href="#topicos">Topicos</a> •
-  <a href="#tecnologias">Tecnologias</a> •
-  <a href="#consideraciones">Consideraciones</a> •
-  <a href="#descarga">Descarga</a> •
-  <a href="#instalación-y-ejecución">Instalación y ejecución</a> •
-  <a href="#autores">Autores</a> •
-  <a href="#relacionados">Relacionados</a> •
-  <a href="#roadmap">Roadmap</a>
-</p>
+## Ejecución local
+### Requisitos previos
+* Ambiente virtual (Opcional)
+* Instalación de librerías (Archivo de requisitos)
 
-El siguiente GIF es de ejemplo, si tienes uno propio reemplazalo, de lo contrario eliminalo.
-![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
-
-## Topicos
-
-* Java
-* Bases de datos
-* SQL
-* Cucumber
-* Serenity
-* Selenium
-
-## Tecnologias
-### This project required:
-- [JDK java] version 16
-- [Serenity] version 4
-- [Gradle] last version
-
-Nota: 
-*   Se requiere Selenium posterior a la version 4.11 para la descarga automatica de algunos drivers de los navegadores
-    La version de Serenity implementada (4.0.0) ya incluye Selenium 4.12 lo cual soporta los navegadores a Octubre del 2023
-    si el proyecto presenta problemas relacionados a las version del driver descargado de forma automatica y la version de su 
-    navegador vale la pena revisar que este trabajando con versiones recientes de Serenity y checkear las versiones de Selenium
-    incluidas en dicha version de Serenity
-*   Con Selenium Manager incluido en Serenity 4.0.0 ya no se requiere WebDriverManager de Boni Garcia, razon por la cual ya
-    serenity no lo incluye dentro de sus dependencias
-
-## Consideraciones
-- Para hacer uso de la la utilidad de Base de Datos es importante 
-        que se instacie una Base de datos y se configura en el archivo de configuración ubicado en:
-
-            ./src/main/resources/configs/congig.properties
-
-        En las dependencias del proyecto esta agregada la dependencia del driver de MySQL, si no 
-        desea realizar mayores ajustes respecto al motor de BD use MySQL. Si desea usar otro motor, 
-        adiciones la dependencia del driver al build.gradle y configure este driver como observa 
-        se realizo para MySQL en: 
-    
-            ./src/main/java/utils/ConectionBD.java
-        
-        Nota: Algunos motores de BD no requieren agregar la dependencia del driver como Oracle o MSserver
-
-## Descarga
-Para clonar está aplicación desde la linea de comando:
+### Comandos de instalación
+* Clonar el proyecto
 
 ```bash
-git clone https://github.com/somospragma/qa-transversal-proyecto-base-manejo-base-de-datos-java
-cd qa-transversal-proyecto-base-manejo-base-de-datos-java
-git remote remove origin
-git remote add origin URL_DE_TU_NUEVO_REPOSITORIO
-git push -u origin master
-```
-Nota: Asegúrate de reemplazar URL_DE_TU_NUEVO_REPOSITORIO con la URL del repositorio que creaste en tu cuenta de GitHub.
-
-Puedes descargar el proyecto en el enlace [download](https://github.com/somospragma/qa-transversal-proyecto-base-manejo-base-de-datos-java) 
-
-## Instalación y ejecución
-
-Para ejecutar está aplicación, necesitas [Gradle](https://gradle.org/install) and [Java JDK](https://www.oracle.com/java/technologies/downloads/) instalados en tu equipo, ten en cuenta que tu IDE puede gestionar la instalación de estos dos requerimientos. Desde la linea de comando:
-
-```
-gradle clean build
+  git clone https://github.com/somospragma/qa-performance-k6-desing-gui
 ```
 
-##  🛠️ Run tests Chrome gradle:
+* Ir al directorio del proyecto
+
+```bash
+  cd qa-performance-k6-design-gui
 ```
-gradle clean test -Dcontext=chrome -Dwebdriver.driver=chrome
-gradle clean test --info --stacktrace --tests "ruta.nameRunner" -Dcontext=chrome -Dwebdriver.driver=chrome
-gradle clean test -Dcucumber.options="--tags @someTag" -Dcontext=chrome -Dwebdriver.driver=chrome
-gradle clean test -Dcucumber.options="--tags '@someTag or @someTag'" -Dcontext=chrome -Dwebdriver.driver=chrome
+* Entorno virtual (Opcional)
+  * Creación del entorno virtual `python -m venv enviroment-name`
+  * Activar el entorno virtual
+    * Windows: `enviroment-name/Scripts/activate`
+    * MacOS: `source enviroment-name/bin/activate`
+
+* Instalación Tkinter para Python
+Para Windows la instalación oficial de Python ya incluye Tkinter por defecto. No se instala con pip ni con un comando adicional, ya que viene integrado con Python. Para instalación en MacOS
+```
+brew install python-tk 
 ```
 
-Nota:
-
-*   Si ejecuta en la consola de gradle no debe usar comillas simples '...' para encerrar '-Dwebdriver.driver=chrome'
-*   Si ejecuta en la consola estándar de la máquina quizás si deba utilizar '...' en las porciones del comando que incluyan puntos
-*   Con "./gradlew test ..." ejecuta el gradle compilado del proyecto
-*   Con "gradle test ..." ejecuta el gradle de su maquina, el configurado en las variables de entorno de su sistema operativo
-
-
-### ejemplo
+* Instalación de librerías en el equipo (o en el entorno virtual)
 ```
-./gradlew clean test --info --stacktrace --tests "co.com.pragma.runners.CompareImageRunner" -Dcontext=chrome '-Dwebdriver.driver=chrome'
-./gradlew clean test --info --stacktrace --tests "co.com.pragma.runners.LoginRunner" -Dcontext=chrome '-Dwebdriver.driver=chrome'
+`pip install -r requirements.txt`
 ```
 
-
-##  🛠️ Run tests Firefox gradle:
+### Ejecución
 ```
-./gradlew clean test -Dcontext=firefox '-Dwebdriver.driver=firefox'
-./gradlew test --tests "runners.RunnerTags" '-Dcontext=firefox -Dwebdriver.driver=firefox'
-```
-### ejemplo
-```
-./gradlew clean test --info --stacktrace --tests "runners.RunnerTags" '-Dcontext=firefox -Dwebdriver.driver=firefox'
+python graficador.py
 ```
 
-## **Run tests in different environments:**
-```
-gradle command... -Denvironment=defaul
-gradle command... -Denvironment=dev
-gradle command... -Denvironment=qa
-gradle command... -Denvironment=prod
-```
-### Note: 
-    - The default environment will be used if no other value is provided
-    - Could modify the environment urls in .../test/resources/serenity.conf
+> [!WARNING]
+> Durante la ejecución de la aplicación, la **terminal usada queda 'ocupada'** mientras la interfaz de usuario de Tkinter está en funcionamiento.  
+> En algunos casos, si **no** se cierra el graficador utilizando el botón diseñado para detener el hilo correctamente, el proceso seguirá en ejecución en segundo plano, y la terminal permanecerá bloqueada. En ese caso, será necesario **finalizar manualmente el proceso** desde el Administrador de Tareas (Windows) o con `kill` en la terminal (Linux/Mac).
 
+### Uso de funcionalidades
+Una vez iniciada la aplicación, se puede elegir entre dos opciones, pruebas de carga y pruebas pico.
+* Pruebas de carga: Se puede elegir el número de rampas con las que se necesite la gráfica, a medida que se va seleccionando alguna de las opciones disponibles, van apareciendo más parámetros de entrada configurables según lo deseado.
+* Pruebas pico: Los parámetros de entrada que aparecen en pantalla son referentes a la caracteristicas del pico que se requiera y el número de estos.
+* Botón graficar: Cuando se utiliza esta opción, se mostrará la gráfica en pantalla según la prueba elegida en ese momento y parámetros ingresados, además en la parte derecha de la gráfica se mostrará el **script correspondiente al Stage que se plantea en Grafana K6**.
+* Botóm cerrar: Cierra la aplicación de forma correcta, internamente detiene el proceso.
 
-## **Run tests in different browser:**
-```
-gradle command... -Dwebdriver.driver=chrome
-gradle command... -Dwebdriver.driver=firefox
-gradle command... -Dwebdriver.driver=edge
-```
 
 
 ## Autores
 
-
-| [<img src="https://gitlab.com/uploads/-/system/user/avatar/13437423/avatar.png?width=400" width=115><br><sub>Mauro L. Ibarra P.</sub>](https://gitlab.com/mauro.ibarrap) <br/> | [<img src="https://secure.gravatar.com/avatar/23b2db02403d79ebd356e8e8356758ec?s=192&d=identicon" width=115><br><sub>Otro autor</sub>](https://gitlab.com/) | 
-:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-
-
-## Relacionados
-
-- [proyecto-base-serenity-bdd-screenplay-browsers-and-utilities](https://github.com/somospragma/qa-web-proyecto-base-serenity-bdd-screenplay-browsers-and-utilities)
-
-
-## Roadmap
-
-- [Guia QA](https://github.com/orgs/somospragma/repositories?q=qa) - (En construcción) Una guia de proyectos Orientados a la Calidad de Software
-
+| [<img src="https://gitlab.com/uploads/-/system/user/avatar/25199087/avatar.png?width=800" width=115><br><sub>Laura María Granados García</sub>](https://gitlab.com/laura.granados) <br/> |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
